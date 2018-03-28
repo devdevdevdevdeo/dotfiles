@@ -1,0 +1,128 @@
+[colors]
+background = ${xrdb:background:#ff0000}
+background2 = ${xrdb:lighterbg:#ff0000}
+selection = ${xrdb:selection:#ff0000}
+;foreground = ${xrdb:foreground:#ff0000}
+foreground = #839496
+separator = ${xrdb:separator:#ff0000}
+lightfg = ${xrdb:color7:#ff0000}
+
+[settings]
+format-background = ${colors.background2}
+format-foreground = ${colors.foreground}
+
+[module/wired]
+type = internal/network
+interface = enp0s25
+label-connected = "  "
+format-connected = <label-connected>
+format-connected-background = #434c5e
+
+[module/wireless]
+type = internal/network
+interface = wlp3s0
+label-connected = "  "
+format-connected = <label-connected>
+format-connected-background = #434c5e
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %B %dth
+
+label = %date%
+format-padding = 1
+
+[module/time]
+type = internal/date
+interval = 1.0
+time = " %H:%M "
+time-alt = " %A, %B %dth "
+label = %time%
+format-background = ${colors.background2}
+format-foreground = ${colors.foreground}
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+
+label-focused = %index%
+label-focused-padding = 1
+label-focused-foreground = ${colors.selection}
+label-focused-background = ${colors.selection}
+
+label-unfocused = %index%
+label-unfocused-background = ${colors.background2}
+label-unfocused-padding = 1
+label-visible = %index%
+label-visible-padding = 1
+label-visible-background = ${colors.background2}
+label-urgent = %index%
+label-urgent-padding = 1
+index-sort = true
+
+[module/battery]
+type = internal/battery
+full-at = 90
+battery = BAT0
+adapter = AC
+poll-interval = 5
+
+format-full = 
+format-full-background = #4c566a
+format-full-padding = 1
+
+format-charging-padding = 1
+format-charging = <animation-charging>
+format-charging-background = #4c566a
+
+label-discharging = %percentage%%
+format-discharging = <ramp-capacity>
+format-discharging-padding = 1
+format-discharging-background = #4c566a
+animation-charging-framerate = 750
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+;ramp-capacity-5 =
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+[bar/bar]
+monitor-strict = true
+bottom = true
+modules-left = i3
+modules-center = 
+modules-right = time wired wireless battery
+monitor = LVDS-1
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = DejaVu Sans Mono:size=10;3
+font-1 = Material Icons:size=10;3
+font-2 = Font Awesome 5 Free:size=10;3
+font-3 = FontAwesome:size=10;3
+height = 24
+tray-position = 
+tray-padding = 4
+wm-restack = i3
+
+
+[bar/vga]
+inherit = bar/bar
+modules-left = i3
+modules-right =
+modules-center = 
+monitor = VGA-1
+tray-position =
+
+[bar/dp]
+inherit = bar/bar
+modules-right =
+monitor = DP-1-1
+bottom = true

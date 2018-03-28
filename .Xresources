@@ -1,0 +1,81 @@
+Urxvt*termName:             screen-256color
+
+URxvt*scrollBar:		    false
+URxvt*scrollWithBuffer:		true
+URxvt*secondaryScreen:		1
+URxvt*secondaryScroll:		0
+
+URxvt.font:			        xft:DejaVu Sans Mono:medium:size=10
+URxvt.letterSpace:		    -1
+!Xft.dpi:			        131
+Xft.lcdfilter:			    lcddefault
+Xft.hintstyle:			    hintslight
+Xft.hinting:			    1
+Xft.antialias:			    1
+Xft.rgba:			        rgb
+
+URxvt.loginShell:		    true
+
+URxvt.perl-ext-common:		keyboard-select,url-select,clipboard
+URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+URxvt.keysym.M-u:		    perl:url-select:select_next
+URxvt.url-select.autocopy:	true
+URxvt.url-select.button:	1
+URxvt.url-select.launcher:	/usr/bin/firefox
+URxvt.url-select.underline:	true
+URxvt.keysym.M-c:		    perl:clipboard:copy
+URxvt.keysym.M-v:		    perl:clipboard:paste
+URxvt.clipboard.autocopy:	true
+
+URxvt.saveLines:		    2000
+URxvt.fading:			    0
+URxvt.internalBorder:		24
+Xcursor.size:			    8
+
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#define base00 #2e3440
+#define base01 #3b4252
+#define base02 #434c5e
+#define base03 #4c566a
+#define base04 #9fabad
+#define base05 #e5e9f0
+#define base06 #eceff4
+#define base07 #8fbcbb
+#define base08 #88c0d0
+#define base09 #81a1c1
+#define base0A #5e81ac
+#define base0B #bf616a
+#define base0C #d08770
+#define base0D #ebcb8b
+#define base0E #a3be8c
+#define base0F #b48ead
+
+
+*foreground:   base04       
+*background:   base00
+*cursorColor:  base04
+*fading:       35
+*fadeColor:    base03
+
+*lighterbg:    base01
+*separator:    base01
+*selection:    base0B
+
+*color0:       base01
+*color1:       base0B
+*color2:       base0E
+*color3:       base0D
+*color4:       base09
+*color5:       base0F
+*color6:       base08
+*color7:       base05
+
+*color8:       base03
+*color9:       base11
+*color10:      base14
+*color11:      base13
+*color12:      base09
+*color13:      base15
+*color14:      base07
+*color15:      base06
