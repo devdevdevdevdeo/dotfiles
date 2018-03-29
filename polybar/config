@@ -6,24 +6,32 @@ selection = ${xrdb:selection:#ff0000}
 foreground = #839496
 separator = ${xrdb:separator:#ff0000}
 lightfg = ${xrdb:color7:#ff0000}
+shade2 = #434c5e
 
 [settings]
 format-background = ${colors.background2}
 format-foreground = ${colors.foreground}
+
+[module/vpn]
+type = custom/script
+exec = echo " "
+exec-if = pgrep -x openvpn
+interval = 5
+format-background = ${colors.shade2}
 
 [module/wired]
 type = internal/network
 interface = enp0s25
 label-connected = "  "
 format-connected = <label-connected>
-format-connected-background = #434c5e
+format-connected-background = ${colors.shade2}
 
 [module/wireless]
 type = internal/network
 interface = wlp3s0
 label-connected = "  "
 format-connected = <label-connected>
-format-connected-background = #434c5e
+format-connected-background = ${colors.shade2}
 
 
 [module/date]
@@ -99,7 +107,7 @@ monitor-strict = true
 bottom = true
 modules-left = i3
 modules-center = 
-modules-right = time wired wireless battery
+modules-right = time wired wireless vpn battery
 monitor = LVDS-1
 background = ${colors.background}
 foreground = ${colors.foreground}
