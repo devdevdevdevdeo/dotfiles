@@ -15,7 +15,7 @@ format-foreground = ${colors.foreground}
 [module/vpn]
 type = custom/script
 exec = echo " "
-exec-if = pgrep -x openvpn
+exec-if = ps ax | grep [o]penvpn
 interval = 5
 format-background = ${colors.shade2}
 
@@ -32,7 +32,6 @@ interface = wlp3s0
 label-connected = "  "
 format-connected = <label-connected>
 format-connected-background = ${colors.shade2}
-
 
 [module/date]
 type = internal/date
@@ -90,12 +89,11 @@ format-discharging = <ramp-capacity>
 format-discharging-padding = 1
 format-discharging-background = #4c566a
 animation-charging-framerate = 750
-ramp-capacity-0 = 
+ramp-capacity-0 = "%{F#bf616a}"
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-;ramp-capacity-5 =
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -108,7 +106,7 @@ bottom = true
 modules-left = i3
 modules-center = 
 modules-right = time wired wireless vpn battery
-monitor = LVDS-1
+monitor = ${env:MONITOR1}
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = DejaVu Sans Mono:size=10;3
@@ -121,16 +119,9 @@ tray-padding = 4
 wm-restack = i3
 
 
-[bar/vga]
+[bar/second]
 inherit = bar/bar
 modules-left = i3
-modules-right =
-modules-center = 
-monitor = VGA-1
-tray-position =
-
-[bar/dp]
-inherit = bar/bar
-modules-right =
-monitor = DP-1-1
-bottom = true
+modules-right = time
+modules-center =
+monitor = ${env:MONITOR2}

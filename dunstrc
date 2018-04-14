@@ -46,7 +46,7 @@
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
     # to the font height and padding.
-    notification_height = 60
+    notification_height = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -55,8 +55,6 @@
 
     # Padding between text and separator.
     padding = 24
-
-    # Horizontal padding.
     horizontal_padding = 24
 
     # Defines width in pixels of frame around the notification window.
@@ -129,7 +127,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -162,7 +160,7 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 72
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Papirus-Dark/16x16/devices:/usr/share/icons/Papirus-Dark/22x22/status

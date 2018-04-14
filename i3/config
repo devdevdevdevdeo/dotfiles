@@ -187,12 +187,13 @@ bindsym $mod+r mode "resize"
 #		urgent_workspace	$background $background $foreground
 #	}
 #}
-#class                      border	 backgr	  text	   indicator
-client.focused		        $lighterbg        $separator    $lighterbg  $lighterbg
-client.focused_inactive	    $lighterbg        $separator    $separator  $separator
-client.unfocused	        $separator        $separator    $separator  $separator
-client.urgent		        $separator        $separator    $separator  $separator
-client.placeholder	        $separator        $separator    $lighterbg  $lighterbg
+#303743
+#class                      border         backgr	  text	   indicator
+client.focused		        #2C313D        #2e3440        $background  $background
+client.focused_inactive	    #2C313D        #303743        $background  $background
+client.unfocused	        #2C313D        #303743        $background  $background
+client.urgent		        $background    #282d37    $background  $background
+client.placeholder	        $background    #282D37    $background  $background
 
 #custom settings
 hide_edge_borders both
@@ -201,7 +202,7 @@ new_float pixel 1
 focus_follows_mouse no
 
 #GAPS
-#gaps inner 24
+#gaps inner 2
 #gaps outer 0
 #workspace 5 gaps inner 0
 #workspace 5 gaps outer 0
@@ -226,3 +227,6 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec nm-applet
 exec dbus-launch compton --config ~/.config/compton.conf &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+assign [class="Spotify"] 9
+assign [class="Slack"] 10
